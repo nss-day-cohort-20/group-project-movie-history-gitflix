@@ -1,5 +1,0 @@
-### Given
-
-### When
-
-### Then
