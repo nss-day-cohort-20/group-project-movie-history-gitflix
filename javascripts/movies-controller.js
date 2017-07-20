@@ -10,7 +10,6 @@ $("#findNewMovieBtn").click(function() {
 	db.findNewMovie($('#input').val())
 	.then(function(movies) {
 		console.log(movies.results);
-		
 	});
 });
 
