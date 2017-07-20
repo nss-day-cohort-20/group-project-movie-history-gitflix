@@ -13,14 +13,17 @@ $("#findNewMovieBtn").click(function() {
 	});
 });
 
-$("#searchUserMovieBtn").click(function (){});
-$("#watchedMovieBtn").click(function (){});
-$("#addToWatchList").click(function (){});
-$("#ratingStarsBtn").click(function (){});
-$("#deleteMoviebtn").click(function (){});
-$(".movieContainer").click(function (){});
-let showUnwatched = "";
-let showWatched = "";
-let selectedMovie = "";
+// $("#searchUserMovieBtn").click(function() {
+// 	db.searchUserMovie($('#input').val());
+// });
+
+// $("#watchedMovieBtn").click(function (){});
+// $("#addToWatchList").click(function (){});
+// $("#ratingStarsBtn").click(function (){});
+// $("#deleteMoviebtn").click(function (){});
+// $(".movieContainer").click(function (){});
+// let showUnwatched = "";
+// let showWatched = "";
+// let selectedMovie = "";
 
 
