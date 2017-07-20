@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html>
-</head>
-<body>
-	<h1>GitFlix</h1>
-	<div id="navbar">
-		<button id="findNewMovieBtn">Find New Movie</button>
-		<button id="searchUserMovieBtn">Search Your Movies</button>
-		<input type="text" name="Search" placeholder="Search for movies">
-		<button id="login">Login</button>
-		<button id="register">Register</button>
-		<button id="logout">Logout</button>
-	</div>
-	<div id="movieHistoryBtns" >
-		<button id="showUnwatched">Show Unwatched</button>
-		<button id="showWatched">Show Watched</button>
-  </div>
-  <div class="movieContainer"></div>
-	<div id="ratingButtons">
-  	<button id="addToWatchlist">Add to Watchlist</button>
- 		<button id="watchedMovieBtn">Watched</button>
- 		<button id="ratingStarsBtn">Rating Stars</button>
- 	</div>
 
-	<script src="dist/app.js"></script>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div id="navbar">
+        <button id="findNewMovieBtn">Find New Movie</button>
+        <button id="searchUserMovieBtn">Search Your Movies</button>
+        <!-- <input type="text" name="Search" placeholder="Search for movies">
+ -->        <button id="login">Login</button>
+        <button id="register">Register</button>
+        <button id="logout">Logout</button>
+    </div>
+</head>
+
+<h1>GitFlix</h1>
+
+<body>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("input:text").val("");
+    });
+});
+</script>
+
+<p><input type="text" name="user" placeholder="Search for Movies"></p>
+
+
+
+
+    <div id="showUnwatchedBtns">
+        <button id="showUnwatched">Show Unwatched</button>
+        </div>
+
+        <div id="showWatchedBtns">
+        <button id="showWatched">Show Watched</button>
+    	</div>
+
+    <div class="container"></div>
+
+    <div id="ratingButtons">
+        <button id="addToWatchlist">Add to Watchlist</button>
+        <button id="watchedMovieBtn">Watched</button>
+        <button id="ratingStars">Rating Stars</button>
+        <span>☆☆☆☆☆</span>
+    </div>
+    <script src="dist/app.js"></script>
 </body>
+
 </html>
