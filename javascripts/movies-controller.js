@@ -2,6 +2,7 @@
 
 let $ = require("jquery");
 let db = require("./movies-factory");
+let tb = require("./template-builder");
 console.log($("#login"));
 let movieArray;
 
@@ -18,10 +19,8 @@ $("#findNewMovieBtn").click(function() {
 function storeMovieData(movies) {
 	movieArray = movies;
 	console.log("Movies = ", movies);
+	tb.displayMovieData(movies);
 }
-
-
-
 
 // $("#searchUserMovieBtn").click(function() {
 // 	db.searchUserMovie($('#input').val());
@@ -35,5 +34,3 @@ function storeMovieData(movies) {
 // let showUnwatched = "";
 // let showWatched = "";
 // let selectedMovie = "";
-
-

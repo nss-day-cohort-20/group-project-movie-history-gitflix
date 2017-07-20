@@ -29,7 +29,6 @@ module.exports.findNewMovie = (searchString) => {
 // 	});
 // };
 
-
 // module.exports.searchUserMovie = (searchString) => {
 // 	console.log(searchString);
 // };
