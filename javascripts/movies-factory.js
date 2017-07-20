@@ -6,7 +6,14 @@ let $ = require('jquery');
 
 // 
 module.exports.findNewMovie = (searchString) => {
-	console.log(searchString);
-};
+	return new Promise ( (resolve, reject) => { 
+	$.ajax({
+            url: `https://api.themoviedb.org/3/search/movie?api_key=a2f31ca982e50c3e2cffa569dbe66d43&query=${searchString}`
+        }).done((movies) => {
+        	console.log(movies);
+        	resolve(movies);
+});
+});
 
+};
 
