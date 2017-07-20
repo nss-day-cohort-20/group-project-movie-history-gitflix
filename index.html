@@ -1,43 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-<link rel="stylesheet" type="text/css" href="css/main.css">
-
 </head>
 <body>
-<h1>GitFlix</h1>
-<div id="navbar">
-<button id="findNewMovie">Find New Movie</button>
-<button id="searchUserMovie">Search Your Movies</button>
-<input type="text" name="Search" placeholder="Search for movies">
-<button id="login">Login</button>
-<button id="Register">Register</button>
-<button id="Logout">Logout</button>
-</div>
-<div id="movieHistoryButtons" >
-<button id="showUnwatched">Show Unwatched</button>
-<button id="showWatched">Show Watched</button>
+	<h1>GitFlix</h1>
+	<div id="navbar">
+		<button id="findNewMovieBtn">Find New Movie</button>
+		<button id="searchUserMovieBtn">Search Your Movies</button>
+		<input type="text" name="Search" placeholder="Search for movies">
+		<button id="login">Login</button>
+		<button id="register">Register</button>
+		<button id="logout">Logout</button>
+	</div>
+	<div id="movieHistoryBtns" >
+		<button id="showUnwatched">Show Unwatched</button>
+		<button id="showWatched">Show Watched</button>
   </div>
+  <div class="movies"></div>
+	<div id="ratingButtons">
+  	<button id="addToWatchlist">Add to Watchlist</button>
+ 		<button id="watchedMovieBtn">Watched</button>
+ 		<button id="ratingStarsBtn">Rating Stars</button>
+ 	</div>
 
-  <div id="movies">
-  </div>
-
-<script src='dist/app.js'></script>
-
-
-<div id="ratingButtons">
-
-<button id="addToWatchlist">Add to Watchlist</button>
-<button id="watched">Watched</button>
-<button id="ratingStarsBtns">Rating Stars</button>
-
-</div>
-
-
-
-
-
-<script src="javascripts/main.js"></script>
-</body>
-</html>
