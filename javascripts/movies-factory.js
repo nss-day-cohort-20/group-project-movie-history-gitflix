@@ -17,11 +17,19 @@ module.exports.findNewMovie = (searchString) => {
 	});
 };
 
-// module.exports.searchUserMovie = (searchString) => {
-// 	console.log(searchString);
+// module.exports.storeMovieData = (searchString) => {
+// 	return new Promise( (resolve, reject) => {
+// 		$.ajax({
+// 			// url: `https://api.themoviedb.org/3/search/movie?api_key=a2f31ca982e50c3e2cffa569dbe66d43&query=${searchString}`
+// 		}).done( (movies) => {
+// 			let storedMovies = movies.results;
+// 			console.log(storedMovies);
+// 			resolve(storedMovies);
+// 		});
+// 	});
 // };
 
 
-
-
-
+// module.exports.searchUserMovie = (searchString) => {
+// 	console.log(searchString);
+// };
