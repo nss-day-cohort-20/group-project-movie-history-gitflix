@@ -1,8 +1,8 @@
 'use strict';
 
 let $ = require('jquery');
-
 console.log($("#login"));
+
 
 let input = document.getElementById("input");
 let findNewMovieBtn = document.getElementById("findNewMovieBtn");
@@ -27,4 +27,5 @@ searchUserMovieBtn.addEventListener("click");
 deleteMovieBtn.addEventListener("click");
 movieContainer.addEventListener("click"); 
 
+console.log("this is also running");
 
