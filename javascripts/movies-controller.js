@@ -1,31 +1,23 @@
 'use strict';
 
-let $ = require('jquery');
+let $ = require("jquery");
+let db = require("./movies-factory");
 console.log($("#login"));
 
+// defines functions findNewMoviesBtn- when the user enters the name of a movie in the input field and clicks on the find new movie button, the database is pulled up and all movies related to what the user entered in the input are displayed in the moviesContainer
 
-let input = document.getElementById("input");
-let findNewMovie = document.getElementById("findNewMovieBtn");
-let searchUserMovies = document.getElementById("searchUserMovieBtn");
-let watchedMovie = document.getElementById("watchedMovieBtn");
-let addToWatchList = document.getElementById("addToWatchList");
-let ratingStarsBtn = document.getElementById("ratingStarsBtn");
-let deleteMovie = document.getElementById("deleteMoviebtn");
-let movieContainer = document.getElementById("movieContainer");
+$("#findNewMovieBtn").click(function() {
+	db.findNewMovie($('#input').val());
+});
+
+$("#searchUserMovieBtn").click(function (){});
+$("#watchedMovieBtn").click(function (){});
+$("#addToWatchList").click(function (){});
+$("#ratingStarsBtn").click(function (){});
+$("#deleteMoviebtn").click(function (){});
+$(".movieContainer").click(function (){});
 let showUnwatched = "";
 let showWatched = "";
 let selectedMovie = "";
 
-console.log("this is running");
-
-input.addEventListener("click");
-findNewMovie.addEventListener("click");
-searchUserMovies.addEventListener("click");
-watchedMovie.addEventListener("click");
-addToWatchList.addEventListener("click");
-ratingStarsBtn.addEventListener("click");
-deleteMovie.addEventListener("click");
-movieContainer.addEventListener("click"); 
-
-console.log("this is also running");
 
