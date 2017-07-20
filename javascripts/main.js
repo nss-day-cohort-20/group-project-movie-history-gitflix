@@ -6,12 +6,12 @@ let moviesController = require('./movies-controller');
 let moviesFactory = require('./movies-factory');
 
 
-<<<<<<< HEAD
-function clearInput() {
 
-}
+module.exports.clearInput = () => {
+    $("#input").val("");
+};
+// $("button").click(clearInput() {
+//     $("input").val("");
+// };
 
 // moviesController.function();
-=======
-
->>>>>>> master
