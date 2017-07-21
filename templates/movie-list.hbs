@@ -1,12 +1,16 @@
+{{!-- this file takes the information passed into the template-builder from the function that was defined and executed in movies-controller, and it builds the bones of the movie file to be displayed into the dom through the controller --}}
+
 <div class="container">
   <ul class="movie-list">
     {{#each movies}}
       <li class="movie-list__item">
         <span class="movie-title"}>{{title}}</span>
         <ul class="movie-list__item--data">
-          <li>{{artist}}</li>
-          <li>{{album}}</li>
+          <li>{{overview}}</li>
           <li>{{year}}</li>
+          <li>{{poster}}</li>
+          <li>{{genre}}</li>
+          {{!-- <li>{{}}</li> --}}
         </ul>
         <a href="#" data-delete-id="{{id}}" class="edit-btn waves-effect waves-light btn">edit</a>
         <a href="#" data-delete-id="{{id}}" class="delete-btn waves-effect waves-light btn">delete</a>
@@ -14,22 +18,3 @@
     {{/each}}
   </ul>
 </div>
-
-{{!-- 
-<div class="uiContainer__song-list box col s12">
-  <ul class="song-list">
-    {{#each songs}}
-      <li class="song-list__item">
-        <span class="song-title"}>{{title}}</span>
-        <ul class="song-list__item--data">
-          <li>{{artist}}</li>
-          <li>{{album}}</li>
-          <li>{{year}}</li>
-        </ul>
-        <a href="#" data-edit-id="{{id}}" class="edit-btn waves-effect waves-light btn">edit</a>
-        <a href="#" data-delete-id="{{id}}" class="delete-btn waves-effect waves-light btn">delete</a>
-      </li>
-    {{/each}}
-  </ul>
-</div>
- --}}

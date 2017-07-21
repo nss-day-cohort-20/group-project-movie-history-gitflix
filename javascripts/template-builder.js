@@ -2,18 +2,29 @@
 
 let $ = require("jquery");
 let moviesController = require('./movies-controller');
+let movieData = require('../templates/movie-list.hbs');
+let movieForm = require('../templates/form.hbs');
 
 module.exports.displayMovieData = (movies) => {
 	let movieData = movies;
 	$(".container").html(movies);
 };
 
-// let $ = require('jquery');
-// let songsListTemplate = require('../templates/song-list.hbs');
-// let formTemplate = require('../templates/form.hbs');
-// module.exports.makeSongList = (songList) => {
-//   return songsListTemplate({songs: songList});
-// };
+module.exports.buildMovieForm = (movies) => {
+  let movieItem = {
+    title: "",
+    overview: "",
+    year: "",
+    poster: "",
+    genre: "",
+    btnText: "Add To Watchlist",
+    header: "Add New Movie",
+    btnClass: "save_new_btn"
+  };
+
+ let movieList = movies|| movieItem;
+  return movieForm(movies);
+};
 
 // module.exports.buildSongForm = (song) => {
 //   let songItem = {
@@ -25,7 +36,6 @@ module.exports.displayMovieData = (movies) => {
 //     header: "Add New Song",
 //     btnClass: "save_new_btn"
 //   };
-
 //   let songData = song || songItem;
 //   return formTemplate(songData);
 // };

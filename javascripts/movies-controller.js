@@ -14,7 +14,7 @@ $("#findNewMovieBtn").click(function(){
 	db.findNewMovie($('#input').val())
 	.then(function(movies) {
 		dom.clearInput();
-		console.log(movies.results);
+		// console.log(movies.results);
 		storeMovieData(movies.results);
 	});
 });
