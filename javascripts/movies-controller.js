@@ -10,24 +10,40 @@ let movieArray;
 // defines functions findNewMoviesBtn- when the user enters the name of a movie in the input field and clicks on the find new movie button, the database is pulled up and all movies related to what the user entered in the input are displayed in the moviesContainer
 
 $("#findNewMovieBtn").click(function(){
- //  console.log($('#input').val(), "hello");
 	db.findNewMovie($('#input').val())
 	.then(function(movies) {
 		dom.clearInput();
-		// console.log(movies.results);
-		storeMovieData(movies.results);
+		buildMovieObjects(movies.results);
 	});
 });
 
-// defines function S
+// defines function storeMovieData while expecting movies to be passed in
 function storeMovieData(movies) {
 	movieArray = movies;
-	console.log("Movies = ", movies);
-	// tb.displayMovieData(movies);
 	let movieList = tb.displayMovieData(movies);
 	$('.container').html(movieList);
-	console.log("NEW =", movieList);
-};
+}
+
+function buildMovieObjects(movies) {
+	let newMovieArr = [];
+	movies.forEach( function(movie) {
+		console.log(movie);
+		let newMovieObj = {
+			title: movie.title,
+			year: movie.release_date,
+			poster: `http://image.tmdb.org/t/p/w500${movie.poster_path}`,
+			id: movie.id,
+			cast: [],
+			summary: movie.overview,
+			rating: 0,
+			watched: false
+		};
+		newMovieArr.push(newMovieObj);
+	});
+	console.log(newMovieArr);
+	storeMovieData(newMovieArr);
+}
+
 
 // module.exports.loadSongsToDom = () => {
 //   db.getSongs()
@@ -37,8 +53,6 @@ function storeMovieData(movies) {
 //     $('container').html(songList);
 //   });
 // };
-
-
 
 // $("#searchUserMovieBtn").click(function() {
 // 	db.searchUserMovie($('#input').val());
