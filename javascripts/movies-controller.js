@@ -19,29 +19,22 @@ $("#findNewMovieBtn").click(function(){
 	});
 });
 
+// defines function S
 function storeMovieData(movies) {
 	movieArray = movies;
 	console.log("Movies = ", movies);
-	tb.displayMovieData(movies);
-}
-
-
-// function buildSongObj() {
-//  let songObj = {
-//     title: $("#form--title").val(),
-//     album: $("#form--album").val(),
-//     artist: $("#form--artist").val(),
-//     year: $("#form--year").val()
-//   };
-//   return songObj;
-// }
+	// tb.displayMovieData(movies);
+	let movieList = tb.displayMovieData(movies);
+	$('.container').html(movieList);
+	console.log("NEW =", movieList);
+};
 
 // module.exports.loadSongsToDom = () => {
 //   db.getSongs()
 //   .then( (songData) => {
 //     console.log("songData", songData);
 //     let songList = templates.makeSongList(songData);
-//     $container.html(songList);
+//     $('container').html(songList);
 //   });
 // };
 

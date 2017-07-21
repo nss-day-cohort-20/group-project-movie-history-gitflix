@@ -5,9 +5,11 @@ let moviesController = require('./movies-controller');
 let movieData = require('../templates/movie-list.hbs');
 let movieForm = require('../templates/form.hbs');
 
-module.exports.displayMovieData = (movies) => {
-	let movieData = movies;
-	$(".container").html(movies);
+module.exports.displayMovieData = (movieList) => {
+	console.log(movieList);
+	return movieData({movies: movieList});
+	// let movieData = movieList;
+	// $(".container").html(movies);
 };
 
 module.exports.buildMovieForm = (movies) => {
