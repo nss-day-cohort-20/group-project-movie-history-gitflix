@@ -2,7 +2,7 @@
 
 let $ = require("jquery");
 let db = require("./movies-factory");
-
+let dom = require("./main.js");
 let tb = require("./template-builder");
 console.log($("#login"));
 let movieArray;
@@ -24,6 +24,28 @@ function storeMovieData(movies) {
 	console.log("Movies = ", movies);
 	tb.displayMovieData(movies);
 }
+
+
+// function buildSongObj() {
+//  let songObj = {
+//     title: $("#form--title").val(),
+//     album: $("#form--album").val(),
+//     artist: $("#form--artist").val(),
+//     year: $("#form--year").val()
+//   };
+//   return songObj;
+// }
+
+// module.exports.loadSongsToDom = () => {
+//   db.getSongs()
+//   .then( (songData) => {
+//     console.log("songData", songData);
+//     let songList = templates.makeSongList(songData);
+//     $container.html(songList);
+//   });
+// };
+
+
 
 // $("#searchUserMovieBtn").click(function() {
 // 	db.searchUserMovie($('#input').val());
