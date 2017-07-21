@@ -1,0 +1,34 @@
+{
+	"movies": {
+		"movie1": [
+			"The Fellowship of the Ring",
+			"2002",
+			"w500",
+			"id",
+			"Viggo Mortensen, Ian McKellan, etc.",
+			"Nine companions set off to destroy evil forever.",
+			"10/10",
+			"YES"
+		],
+		"movie2": [
+			"The Two Towers",
+			"2005",
+			"w500",
+			"id",
+			"Viggo Mortensen, Ian McKellan, etc.",
+			"With the fellowship broken, everyone fights to overcome impending doom.",
+			"10/10",
+			"YES"
+		],
+		"movie3": [
+			"The Return of the King",
+			"2002",
+			"w500",
+			"id",
+			"Viggo Mortensen, Ian McKellan, etc.",
+			"The end has come, will evil prevail?",
+			"10/10",
+			"YES"
+		]
+	}
+}

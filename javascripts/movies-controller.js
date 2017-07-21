@@ -17,6 +17,10 @@ $("#findNewMovieBtn").click(function(){
 	});
 });
 
+// $("#searchUserMovieBtn").click(function() {
+// 	db.searchUserMovie($('#input').val());
+// });
+
 // defines function storeMovieData while expecting movies to be passed in
 function storeMovieData(movies) {
 	movieArray = movies;
@@ -27,7 +31,7 @@ function storeMovieData(movies) {
 function buildMovieObjects(movies) {
 	let newMovieArr = [];
 	movies.forEach( function(movie) {
-		console.log(movie);
+		// console.log(movie);
 		let newMovieObj = {
 			title: movie.title,
 			year: movie.release_date,
@@ -44,7 +48,6 @@ function buildMovieObjects(movies) {
 	storeMovieData(newMovieArr);
 }
 
-
 // module.exports.loadSongsToDom = () => {
 //   db.getSongs()
 //   .then( (songData) => {
@@ -53,10 +56,6 @@ function buildMovieObjects(movies) {
 //     $('container').html(songList);
 //   });
 // };
-
-// $("#searchUserMovieBtn").click(function() {
-// 	db.searchUserMovie($('#input').val());
-// });
 
 // $("#watchedMovieBtn").click(function (){});
 // $("#addToWatchList").click(function (){});
