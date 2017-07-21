@@ -17,6 +17,49 @@ $("#findNewMovieBtn").click(function(){
 	});
 });
 
+// $(document).on("click", ".delete-btn", function() {
+//     let songId = $(this).data("deleteId");
+//     db.deleteSong(songId)
+//     .then( (song) => {
+//       console.log("song deleted", song);
+//       module.exports.loadSongsToDom();
+//     })
+//     .catch( (err) => {
+//       console.log("Song could not be detected", err.statusText);
+//     });
+//   });
+
+// adds a click event listener for the deleteMovieBtn id and runs an anonymous function
+$(document).on("click", "#deleteMovieBtn", function() {
+
+	// sets movieId to equal the data within the movie card that is being selected and setting it to delete
+	let movieId = $(this).closest(".movie");
+	
+	// passes the movieId into the deleteMovie function within the movies-factory
+	db.deleteMovie(movieId)
+
+	// then run an anonymous function while epecting movie to pass through
+	.then( (movie) => {
+
+		// console log stating that movie got deleted and shows which movie it was
+		console.log("movie deleted", movie);
+
+		// exports and executes storeMovieData
+		module.exports.storeMovieData();
+	})
+
+	// anonymous function that expects err to pass through it on the catch 
+	.catch( (err) => {
+
+		// console log stating error is move could not be deleted
+		console.log("Could not delete movie", err.statusText);
+	});
+});
+
+// $("#searchUserMovieBtn").click(function() {
+// 	db.searchUserMovie($('#input').val());
+// });
+
 // defines function storeMovieData while expecting movies to be passed in
 function storeMovieData(movies) {
 	movieArray = movies;
@@ -27,7 +70,7 @@ function storeMovieData(movies) {
 function buildMovieObjects(movies) {
 	let newMovieArr = [];
 	movies.forEach( function(movie) {
-		console.log(movie);
+		// console.log(movie);
 		let newMovieObj = {
 			title: movie.title,
 			year: movie.release_date,
@@ -44,7 +87,6 @@ function buildMovieObjects(movies) {
 	storeMovieData(newMovieArr);
 }
 
-
 // module.exports.loadSongsToDom = () => {
 //   db.getSongs()
 //   .then( (songData) => {
@@ -53,10 +95,6 @@ function buildMovieObjects(movies) {
 //     $('container').html(songList);
 //   });
 // };
-
-// $("#searchUserMovieBtn").click(function() {
-// 	db.searchUserMovie($('#input').val());
-// });
 
 // $("#watchedMovieBtn").click(function (){});
 // $("#addToWatchList").click(function (){});

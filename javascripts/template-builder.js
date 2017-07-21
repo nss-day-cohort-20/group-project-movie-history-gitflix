@@ -9,9 +9,6 @@ module.exports.displayMovieData = (movieList) => {
 	return movieData({movies: movieList});
 };
 
-
-
-
 // module.exports.buildSongForm = (song) => {
 //   let songItem = {
 //     title: "",

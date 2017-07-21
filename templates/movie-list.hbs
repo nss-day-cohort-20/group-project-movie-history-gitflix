@@ -1,27 +1,29 @@
 {{!-- this file takes the information passed into the template-builder from the function that was defined and executed in movies-controller, and it builds the bones of the movie file to be displayed into the dom through the controller --}}
 
-{{!-- <div class="container"> --}}
+<div class="container">
   <div class="movie-list">
     {{#each movies}}
-      <span class="movie-header"}>
-        <p>{{title}}</p>
-        <p>{{year}}</p>
-        <p>X</p>
-      </span>
-      <div>
-        <img class="poster-img" src={{poster}}>
+      <div class="movie">
+        <span class="movie-header"}>
+          <p>{{title}}</p>
+          <p>{{year}}</p>
+          <button type="button" id="deleteMovieBtn">Delete</button>
+        </span>
+        <div>
+          <img class="poster-img" src={{poster}}>
+        </div>
+        <div class="rating">*****</div>
+        <div class="summary">{{summary}}</div>
+        <div class="cast">{{cast}}</div>
+        <div class="watched">
+          <button id="watchedMovieBtn">Watched</button>
+        </div>
+        <div id="ratingButtons">
+          <button id="ratingStars">Rating Stars</button>
+          <span>☆☆☆☆☆</span>
+        </div>
+        <button id="addToWatchlist">Add to Watchlist</button>
       </div>
-      <div class="rating">*****</div>
-      <div class="summary">{{summary}}</div>
-      <div class="cast">{{cast}}</div>
-      <div class="watched">
-        <button id="watchedMovieBtn">Watched</button>
-      </div>
-      <div id="ratingButtons">
-        <button id="ratingStars">Rating Stars</button>
-        <span>☆☆☆☆☆</span>
-      </div>
-      <button id="addToWatchlist">Add to Watchlist</button>
     {{/each}}
   </ul>
-{{!-- </div> --}}
+</div>
