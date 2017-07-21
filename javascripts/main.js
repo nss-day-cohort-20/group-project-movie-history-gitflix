@@ -7,3 +7,11 @@ let moviesFactory = require('./movies-factory');
 
 
 
+module.exports.clearInput = () => {
+    $("#input").val("");
+};
+// $("button").click(clearInput() {
+//     $("input").val("");
+// };
+
+// moviesController.function();

@@ -6,6 +6,7 @@ let $ = require('jquery');
 
 // defines the function findNewMovie to export while setting it to equal the result of a function while expecting searchString to be passed in
 module.exports.findNewMovie = (searchString) => {
+	console.log(searchString, "test");
 	return new Promise( (resolve, reject) => {
 	console.log(searchString);
 		$.ajax({
