@@ -1,34 +1,28 @@
-{
-	"movies": {
-		"movie1": [
-			"The Fellowship of the Ring",
-			"2002",
-			"w500",
-			"id",
-			"Viggo Mortensen, Ian McKellan, etc.",
-			"Nine companions set off to destroy evil forever.",
-			"10/10",
-			"YES"
-		],
-		"movie2": [
-			"The Two Towers",
-			"2005",
-			"w500",
-			"id",
-			"Viggo Mortensen, Ian McKellan, etc.",
-			"With the fellowship broken, everyone fights to overcome impending doom.",
-			"10/10",
-			"YES"
-		],
-		"movie3": [
-			"The Return of the King",
-			"2002",
-			"w500",
-			"id",
-			"Viggo Mortensen, Ian McKellan, etc.",
-			"The end has come, will evil prevail?",
-			"10/10",
-			"YES"
-		]
+[{
+		"title": "The Fellowship of the Ring",
+		"year": "2001",
+		"poster_path": "http://image.tmdb.org/t/p/w500/bxVxZb5O9OxCO0oRUNdCnpy9NST.jpg",
+		"id": "123", 
+		"summary": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+		"rating": "10/10",
+		"watched": "YES"
+	},
+	{
+		"title": "The Two Towers",
+		"year": "2002",
+		"poster_path": "http://image.tmdb.org/t/p/w500/wf3v0Pn09jnT5HSaYal7Ami3bdA.jpg",
+		"id": "121", 
+		"summary": "Frodo and Sam are trekking to Mordor to destroy the One Ring of Power while Gimli, Legolas and Aragorn search for the orc-captured Merry and Pippin. All along, nefarious wizard Saruman awaits the Fellowship members at the Orthanc Tower in Isengard.",
+		"rating": "10/10",
+		"watched": "YES"
+	},
+	{
+			"title": "The Return of the King",
+			"year": "2003",
+			"poster_path": "http://image.tmdb.org/t/p/w500/uexxR7Kw1qYbZk0RYaF9Rx5ykbj.jpg",
+			"id": "122",
+			"summary": "Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron's forces. Meanwhile, Frodo and Sam bring the ring closer to the heart of Mordor, the dark lord's realm.",
+			"rating": "10/10",
+			"watched": "YES"
 	}
-}
+]

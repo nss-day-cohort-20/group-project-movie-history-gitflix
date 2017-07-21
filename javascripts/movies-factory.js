@@ -15,6 +15,22 @@ module.exports.findNewMovie = (searchString) => {
 	});
 };
 
+// 
+module.exports.deleteMovie = (movieId) => {
+	return new Promise( (resolve, reject) => {
+		console.log(movieId);
+		$.ajax({
+			url: ``
+		}).done( (movieId) => {
+			console.log(movieId);
+			resolve(movieId);
+		});
+	});
+};
+
+
+
+
 // module.exports.storeMovieData = (searchString) => {
 // 	return new Promise( (resolve, reject) => {
 // 		$.ajax({
