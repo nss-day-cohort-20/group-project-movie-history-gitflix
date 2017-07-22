@@ -9,16 +9,4 @@ module.exports.displayMovieData = (movieList) => {
 	return movieData({movies: movieList});
 };
 
-// module.exports.buildSongForm = (song) => {
-//   let songItem = {
-//     title: "",
-//     artist: "",
-//     year: "",
-//     album: "",
-//     btnText: "save song",
-//     header: "Add New Song",
-//     btnClass: "save_new_btn"
-//   };
-//   let songData = song || songItem;
-//   return formTemplate(songData);
-// };
+
