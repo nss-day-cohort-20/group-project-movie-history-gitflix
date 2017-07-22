@@ -30,6 +30,15 @@ module.exports.deleteMovie = (movieId) => {
 	});
 };
 
+module.exports.addMovie = (movieFormObj) => {
+	return new Promise( (resolve,reject) => {
+		let currentUser = firebase.auth().currentUser.uid;
+		movieFormObj.uid = currentUser;
+		$.ajax({
+			url: `${fbURL}/movies`
+		});
+	});
+};
 
 
 
