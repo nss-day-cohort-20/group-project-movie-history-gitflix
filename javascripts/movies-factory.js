@@ -1,6 +1,8 @@
 'use strict';
 
 let $ = require('jquery');
+let fbURL = "https://gitflix-837d2.firebaseio.com/";
+let firebase = require('./fbConfigfile');
 
 // defines the function findNewMovie to export while setting it to equal the result of a function while expecting searchString to be passed in
 module.exports.findNewMovie = (searchString) => {
