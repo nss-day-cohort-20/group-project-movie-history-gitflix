@@ -4,25 +4,26 @@
 <div class="container">
   <div class="movie-list">
     {{#each movies}}
-      <div class="movie">
-        <span class="movie-header"}>
+      <div class="movie" id= {{id}}>
+        <span class="movie-header">
           <p>{{title}}</p>
           <p>{{year}}</p>
           <button type="button" id="deleteMovieBtn">Delete</button>
         </span>
-        <div>
-          <img class="poster-img" src={{poster}}>
-        </div>
-        <div class="rating">*****</div>
-        <div class="summary">{{summary}}</div>
-        <div class="cast">{{cast}}</div>
-        <div class="watched">
-          <button id="watchedMovieBtn">Watched</button>
-        </div>
-        <div id="ratingButtons">
-          <button id="ratingStars">Rating Stars</button>
-          <span>☆☆☆☆☆</span>
-        </div>
+      <div>
+        <img class="poster-img" src={{poster}}>
+      </div>
+      <div class="rating">*****</div>
+      <div class="summary">{{summary}}</div>
+      <div class="cast">{{cast}}</div>
+      <div class="watched">
+        <button id="watchedMovieBtn">Watched</button>
+      </div>
+      <div id="ratingButtons">
+        <button id="ratingStars">Rating Stars</button>
+        <span>☆☆☆☆☆</span>
+      </div>
+      <div>
         <button id="addToWatchlist">Add to Watchlist</button>
       </div>
     {{/each}}

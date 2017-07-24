@@ -6,13 +6,10 @@ let db = require("./movies-factory");
 let dom = require("./main");
 
 let tb = require("./template-builder");
-let $container = $(".uiContainer--wrapper");
 console.log($("#login"));
 let movieArray;
 
-
 // defines functions findNewMoviesBtn- when the user enters the name of a movie in the input field and clicks on the find new movie button, the database is pulled up and all movies related to what the user entered in the input are displayed in the moviesContainer
-
 
 
 $("#findNewMovieBtn").click(function(){
@@ -63,15 +60,6 @@ $(document).on("click", "#deleteMovieBtn", function() {
 	});
 });
 
-$(document).on("click", "#addToWatchlist", function() {
-	console.log("add watch list click worked!", $(this).closest(".movie").attr("id"));
-      let addToWatchList = $(this).closest(".movie");
-// 	$container.html(movieForm);
-	});
-
-function extractObjToAdd(id) {
-	console.log("id", id);
-}
 // $("#searchUserMovieBtn").click(function() {
 // 	db.searchUserMovie($('#input').val());
 // });
@@ -86,7 +74,6 @@ function storeMovieData(movies) {
 }
 
 function buildMovieObjects(movies) {
-	console.log("buildMovieObjects", movies);
 	let newMovieArr = [];
 	movies.forEach( function(movie) {
 		// console.log(movie);
@@ -105,7 +92,6 @@ function buildMovieObjects(movies) {
 	console.log(newMovieArr);
 	storeMovieData(newMovieArr);
 }
-
 
 // module.exports.loadSongsToDom = () => {
 //   db.getSongs()
