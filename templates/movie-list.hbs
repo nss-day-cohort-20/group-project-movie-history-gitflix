@@ -3,8 +3,8 @@
 <div class="container">
   <div class="movie-list">
     {{#each movies}}
-      <div class="movie">
-        <span class="movie-header"}>
+      <div class="movie" id= {{id}}>
+        <span class="movie-header">
           <p>{{title}}</p>
           <p>{{year}}</p>
           <button type="button" id="deleteMovieBtn">Delete</button>

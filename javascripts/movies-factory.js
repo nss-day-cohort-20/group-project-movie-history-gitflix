@@ -34,7 +34,7 @@ module.exports.addMovie = (movieFormObj) => {
 		let currentUser = firebase.auth().currentUser.uid;
 		movieFormObj.uid = currentUser;
 		$.ajax({
-			url: `${fbURL}/movies.json`,
+			url: `${fbURL}/movie.json`,
 			type: "POST",
 			data: JSON.stringify(movieFormObj),
 			dataType: "json"
