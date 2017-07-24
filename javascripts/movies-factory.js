@@ -51,7 +51,7 @@ module.exports.showUnwatched = () => {
 	console.log("show unwatched is running");
 	return new Promise( (resolve, reject) => {
 		$.ajax({
-			url: `${fbURL}/movie.json?orderBy="watched"&equalTo=true`,
+			url: `${fbURL}/movie.json?orderBy="watched"&equalTo=false`,
 			type: "GET"
 			// data: JSON.stringify(),
 			// dataType: "json"
@@ -65,7 +65,7 @@ module.exports.showWatched = () => {
 	console.log("show watched is running");
 	return new Promise( (resolve, reject) => {
 		$.ajax({
-			url: `${fbURL}/movie.json?orderBy="watched"&equalTo=false`,
+			url: `${fbURL}/movie.json?orderBy="watched"&equalTo=true`,
 			type: "GET"
 			// data: JSON.stringify(),
 			// dataType: "json"
