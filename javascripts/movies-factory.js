@@ -29,17 +29,26 @@ module.exports.deleteMovie = (movieId) => {
 	});
 };
 
-module.exports.addMovie = (movieFormObj) => {
+module.exports.addToWatchList = (movieObj) => {
+	console.log("movie = ", movieObj);
 	return new Promise( (resolve,reject) => {
-		let currentUser = firebase.auth().currentUser.uid;
-		movieFormObj.uid = currentUser;
+		// let currentUser = firebase.auth().currentUser.uid;
+		// movieObj.uid = currentUser;
 		$.ajax({
 			url: `${fbURL}/movie.json`,
 			type: "POST",
-			data: JSON.stringify(movieFormObj),
+			data: JSON.stringify(movieObj),
 			dataType: "json"
 		}).done( (movie) => {
 			resolve(movie);
+		});
+	});
+};
+
+module.exports.getMovie = (movieId) => {
+	return new Promise( (resolve, reject) => {
+		$.ajax({
+			url: `${fbURL}/movie/${movieId}.json`
 		});
 	});
 };
