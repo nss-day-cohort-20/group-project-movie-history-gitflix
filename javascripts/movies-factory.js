@@ -17,6 +17,7 @@ module.exports.findNewMovie = (searchString) => {
 	});
 };
 
+// defines function deleteMovie to be exported while setting it to equal an anonymous function while expecting movieId to be passed in 
 module.exports.deleteMovie = (movieId) => {
 	return new Promise( (resolve, reject) => {
 		console.log(movieId);
@@ -29,6 +30,7 @@ module.exports.deleteMovie = (movieId) => {
 	});
 };
 
+// defines function addToWatchlist to be exported while setting it to equal an anonymous function while expecting movieObj to be passed in 
 module.exports.addToWatchList = (movieObj) => {
 	console.log("movie = ", movieObj);
 	return new Promise( (resolve,reject) => {
@@ -45,10 +47,46 @@ module.exports.addToWatchList = (movieObj) => {
 	});
 };
 
-module.exports.getMovie = (movieId) => {
+module.exports.showUnwatched = () => {
+	console.log("show unwatched is running");
 	return new Promise( (resolve, reject) => {
 		$.ajax({
-			url: `${fbURL}/movie/${movieId}.json`
+			url: `${fbURL}/movie.json?orderBy="watched"&equalTo=true`,
+			type: "GET"
+			// data: JSON.stringify(),
+			// dataType: "json"
+		}).done((movie) => {
+			resolve(movie);
+		});
+	});
+};
+
+module.exports.showWatched = () => {
+	console.log("show watched is running");
+	return new Promise( (resolve, reject) => {
+		$.ajax({
+			url: `${fbURL}/movie.json?orderBy="watched"&equalTo=false`,
+			type: "GET"
+			// data: JSON.stringify(),
+			// dataType: "json"
+		}).done((movie) => {
+			resolve(movie);
+		});
+	});
+};
+
+module.exports.watchedMovie = (movieObj) => {
+	console.log("watched movie = ", movieObj);
+	return new Promise( (resolve,reject) => {
+		// let currentUser = firebase.auth().currentUser.uid;
+		// movieObj.uid = currentUser;
+		$.ajax({
+			url: `${fbURL}/movie.json`,
+			type: "POST",
+			data: JSON.stringify(movieObj),
+			dataType: "json"
+		}).done( (movie) => {
+			resolve(movie);
 		});
 	});
 };
@@ -63,8 +101,4 @@ module.exports.getMovie = (movieId) => {
 // 			resolve(storedMovies);
 // 		});
 // 	});
-// };
-
-// module.exports.searchUserMovie = (searchString) => {
-// 	console.log(searchString);
 // };
