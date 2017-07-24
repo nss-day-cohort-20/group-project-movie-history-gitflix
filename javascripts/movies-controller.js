@@ -8,12 +8,12 @@ let $container = $(".uiContainer--wrapper");
 console.log($("#login"));
 let movieArray;
 
-$("#findNewMovieBtn").click(function(){
-	db.findNewMovie($('#input').val())
-	.then(function(movies) {
-		dom.clearInput();
-		buildMovieObjects(movies.results);
-	});
+$("#findNewMovieBtn").click(function() {
+    db.findNewMovie($('#input').val())
+        .then(function(movies) {
+            dom.clearInput();
+            buildMovieObjects(movies.results);
+        });
 });
 
 // $(document).on("click", ".delete-btn", function() {
@@ -31,28 +31,28 @@ $("#findNewMovieBtn").click(function(){
 // adds a click event listener for the deleteMovieBtn id and runs an anonymous function
 $(document).on("click", "#deleteMovieBtn", function() {
 
-	// sets movieId to equal the data within the movie card that is being selected and setting it to delete
-	let movieId = $(this).closest(".movie");
-	
-	// passes the movieId into the deleteMovie function within the movies-factory
-	db.deleteMovie(movieId)
+    // sets movieId to equal the data within the movie card that is being selected and setting it to delete
+    let movieId = $(this).closest(".movie");
 
-	// then run an anonymous function while epecting movie to pass through
-	.then( (movie) => {
+    // passes the movieId into the deleteMovie function within the movies-factory
+    db.deleteMovie(movieId)
 
-		// console log stating that movie got deleted and shows which movie it was
-		console.log("movie deleted", movie);
+        // then run an anonymous function while epecting movie to pass through
+        .then((movie) => {
 
-		// exports and executes storeMovieData
-		module.exports.storeMovieData();
-	})
+            // console log stating that movie got deleted and shows which movie it was
+            console.log("movie deleted", movie);
 
-	// anonymous function that expects err to pass through it on the catch 
-	.catch( (err) => {
+            // exports and executes storeMovieData
+            module.exports.storeMovieData();
+        })
 
-		// console log stating error is move could not be deleted
-		console.log("Could not delete movie", err.statusText);
-	});
+        // anonymous function that expects err to pass through it on the catch 
+        .catch((err) => {
+
+            // console log stating error is move could not be deleted
+            console.log("Could not delete movie", err.statusText);
+        });
 });
 
 $(document).on("click", "#addToWatchlist", function() {
@@ -71,13 +71,13 @@ function extractObjToAdd(id) {
 
 // defines function storeMovieData while expecting movies to be passed in
 function storeMovieData(movies) {
-	movieArray = movies;
-	let movieList = tb.displayMovieData(movies);
-	$('.container').html(movieList);
+    movieArray = movies;
+    let movieList = tb.displayMovieData(movies);
+    $('.container').html(movieList);
 }
 
 function buildMovieObjects(movies) {
-	console.log("buildMovieObjects", movies);
+	// console.log("buildMovieObjects", movies);
 	let newMovieArr = [];
 	movies.forEach( function(movie) {
 		// console.log(movie);
