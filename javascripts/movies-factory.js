@@ -30,7 +30,7 @@ module.exports.deleteMovie = (movieId) => {
 };
 
 module.exports.addToWatchList = (movieObj) => {
-	console.log("movieobj", movieObj);
+	console.log("movie = ", movieObj);
 	return new Promise( (resolve,reject) => {
 		// let currentUser = firebase.auth().currentUser.uid;
 		// movieObj.uid = currentUser;
@@ -41,6 +41,14 @@ module.exports.addToWatchList = (movieObj) => {
 			dataType: "json"
 		}).done( (movie) => {
 			resolve(movie);
+		});
+	});
+};
+
+module.exports.getMovie = (movieId) => {
+	return new Promise( (resolve, reject) => {
+		$.ajax({
+			url: `${fbURL}/movie/${movieId}.json`
 		});
 	});
 };

@@ -17,16 +17,16 @@ $("#findNewMovieBtn").click(function() {
 });
 
 // $(document).on("click", ".delete-btn", function() {
-//     let songId = $(this).data("deleteId");
-//     db.deleteSong(songId)
-//     .then( (song) => {
-//       console.log("song deleted", song);
-//       module.exports.loadSongsToDom();
-//     })
-//     .catch( (err) => {
-//       console.log("Song could not be detected", err.statusText);
-//     });
+//   let songId = $(this).data("deleteId");
+//   db.deleteSong(songId)
+//   .then( (song) => {
+//     console.log("song deleted", song);
+//     module.exports.loadSongsToDom();
+//   })
+//   .catch( (err) => {
+//     console.log("Song could not be detected", err.statusText);
 //   });
+// });
 
 // adds a click event listener for the deleteMovieBtn id and runs an anonymous function
 $(document).on("click", "#deleteMovieBtn", function() {
@@ -56,23 +56,18 @@ $(document).on("click", "#deleteMovieBtn", function() {
 });
 
 $(document).on("click", "#addToWatchlist", function() {
-    extractObjToAdd($(this).closest(".movie").attr("id"));
-    // 	$container.html(movieForm);
+  extractObjToAdd($(this).closest(".movie").attr("id"));
+		// $container.html(movieForm);
 });
 
 function extractObjToAdd(id) {
-    movieArray.forEach(function(movie){
-    	console.log("id", id, movie.id);
-    	if(id == movie.id) {
-    		db.addToWatchList(movie);
-    	}
-    });  
-    
-
+	movieArray.forEach( function(movie) {
+		console.log("id", id, movie.id);
+		if(id == movie.id) {
+			db.addToWatchList(movie);
+		}
+	});
 }
-// $("#searchUserMovieBtn").click(function() {
-// 	db.searchUserMovie($('#input').val());
-// });
 
 // defines function storeMovieData while expecting movies to be passed in
 function storeMovieData(movies) {
@@ -82,22 +77,22 @@ function storeMovieData(movies) {
 }
 
 function buildMovieObjects(movies) {
-    console.log("buildMovieObjects", movies);
-    let newMovieArr = [];
-    movies.forEach(function(movie) {
-        // console.log(movie);
-        let newMovieObj = {
-            title: movie.title,
-            year: movie.release_date,
-            poster: `http://image.tmdb.org/t/p/w500${movie.poster_path}`,
-            id: movie.id,
-            cast: [],
-            summary: movie.overview,
-            rating: 0,
-            watched: false
-        };
-        newMovieArr.push(newMovieObj);
-    });
-    console.log(newMovieArr);
-    storeMovieData(newMovieArr);
+	// console.log("buildMovieObjects", movies);
+	let newMovieArr = [];
+	movies.forEach( function(movie) {
+		// console.log(movie);
+		let newMovieObj = {
+			title: movie.title,
+			year: movie.release_date,
+			poster: `http://image.tmdb.org/t/p/w500${movie.poster_path}`,
+			id: movie.id,
+			cast: [],
+			summary: movie.overview,
+			rating: 0,
+			watched: false
+		};
+		newMovieArr.push(newMovieObj);
+	});
+	// console.log(newMovieArr);
+	storeMovieData(newMovieArr);
 }
