@@ -84,9 +84,9 @@ function buildMovieObjects(movies) {
 			title: movie.title,
 			year: movie.release_date,
 			poster: `http://image.tmdb.org/t/p/w500${movie.poster_path}`,
-			id: movie.id,
+			id: movies.id,
 			cast: [],
-			summary: movie.overview,
+			summary: movies.overview,
 			rating: 0,
 			watched: false
 		};
