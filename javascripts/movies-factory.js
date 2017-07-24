@@ -45,6 +45,50 @@ module.exports.addToWatchList = (movieObj) => {
 	});
 };
 
+module.exports.watchedMovie = (movieObj) => {
+	console.log("movieobj", movieObj);
+	return new Promise( (resolve,reject) => {
+		// let currentUser = firebase.auth().currentUser.uid;
+		// movieObj.uid = currentUser;
+		$.ajax({
+			url: `${fbURL}/movie.json`,
+			type: "POST",
+			data: JSON.stringify(movieObj),
+			dataType: "json"
+		}).done( (movie) => {
+			resolve(movie);
+		});
+	});
+};
+
+module.exports.showUnwatched = () => {
+	console.log("showUnwatched");
+    return new Promise((resolve, reject) => {        
+        $.ajax({
+          url: `${fbURL}/movie.json?orderBy="watched"&equalTo=false`,
+          type: "GET",
+          // data: JSON.stringify(movie),
+          // dataType: "json"
+        }).done((movie) => {
+            resolve(movie);
+        });
+    });
+};
+
+module.exports.showWatched = () => {
+	console.log("showUnwatched");
+    return new Promise((resolve, reject) => {        
+        $.ajax({
+          url: `${fbURL}/movie.json?orderBy="watched"&equalTo=true`,
+          type: "GET",
+          // data: JSON.stringify(movie),
+          // dataType: "json"
+        }).done((movie) => {
+            resolve(movie);
+        });
+    });
+};
+
 // module.exports.storeMovieData = (searchString) => {
 // 	return new Promise( (resolve, reject) => {
 // 		$.ajax({

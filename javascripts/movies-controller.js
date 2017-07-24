@@ -60,15 +60,43 @@ $(document).on("click", "#addToWatchlist", function() {
     // 	$container.html(movieForm);
 });
 
-function extractObjToAdd(id) {
-    movieArray.forEach(function(movie){
-    	console.log("id", id, movie.id);
-    	if(id == movie.id) {
-    		db.addToWatchList(movie);
-    	}
-    });  
-    
+$(document).on("click", "#watchedMovieBtn", function() {
+    extractObjToAdd($(this).closest(".movie").attr("id"));
+    // 	$container.html(movieForm);
+});
 
+
+
+$(document).on("click", "#showUnwatched", function() {
+    db.showUnwatched()
+        .then((movie) => {
+            let movieList = tb.displayMovieData(movie);
+            $('.container').html(movieList);
+        });
+
+});
+
+$(document).on("click", "#showWatched", function() {
+    db.showWatched()
+        .then((movie) => {
+            let movieList = tb.displayMovieData(movie);
+            $('.container').html(movieList);
+        });
+
+});
+
+function extractObjToAdd(id) {
+    movieArray.forEach(function(movie) {
+        console.log("id", id, movie.id);
+        if (id == movie.id) {
+            db.addToWatchList(movie)
+                .then(() => {
+                	console.log("remove", $(`#${movie.id}`));
+                    $(`#${movie.id}`).remove();
+
+                });
+        }
+    });
 }
 // $("#searchUserMovieBtn").click(function() {
 // 	db.searchUserMovie($('#input').val());
