@@ -56,11 +56,14 @@ $(document).on("click", "#deleteMovieBtn", function() {
 });
 
 $(document).on("click", "#addToWatchlist", function() {
-	console.log("add watch list click worked!");
-	let movieForm = buildMovieObjects();
-	$container.html(movieForm);
-});
+	console.log("add watch list click worked!", $(this).closest(".movie").attr("id"));
+      let addToWatchList = $(this).closest(".movie");
+// 	$container.html(movieForm);
+	});
 
+function extractObjToAdd(id) {
+	console.log("id", id);
+}
 // $("#searchUserMovieBtn").click(function() {
 // 	db.searchUserMovie($('#input').val());
 // });
@@ -73,6 +76,7 @@ function storeMovieData(movies) {
 }
 
 function buildMovieObjects(movies) {
+	console.log("buildMovieObjects", movies);
 	let newMovieArr = [];
 	movies.forEach( function(movie) {
 		// console.log(movie);
